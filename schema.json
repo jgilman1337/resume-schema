@@ -70,6 +70,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+					},
 					"employer": {
 						"type": "string",
 						"description": "The name of the company, e.g. 'Facebook'."
@@ -127,6 +131,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+					},
 					"organization": {
 						"type": "string",
 						"description": "The name of the volunteer organization, e.g. 'American Red Cross'."
@@ -537,6 +545,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+					},
 					"name": {
 						"type": "string",
 						"description": "The name of the project, e.g. 'The World Wide Web'."
