@@ -116,6 +116,15 @@
 							"description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising."
 						}
 					},
+					"crossReferencedProjects": {
+						"type": "array",
+						"description": "Optional list of projects[].id values for projects that belong to this job, such as consulting engagements under one employer. Each string is a projects[].id, not this job's own id.",
+						"additionalItems": false,
+						"items": {
+							"type": "string",
+							"description": "A projects[].id for a project tied to this job."
+						}
+					},
 					"keywords": {
 						"description": "A list of keywords pertaining to this job position.",
 						"$ref": "types.json#/definitions/keywords"
@@ -547,7 +556,7 @@
 				"properties": {
 					"id": {
 						"type": "string",
-						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+						"description": "Stable join key for a questionnaire, and the value stored in work[].crossReferencedProjects. Distinct from certificates[].id, which is a certificate verification number."
 					},
 					"name": {
 						"type": "string",
