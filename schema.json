@@ -72,7 +72,7 @@
 				"properties": {
 					"id": {
 						"type": "string",
-						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+						"description": "Stable join key for a questionnaire, and the token a settings exclusion uses to name this entry. Distinct from certificates[].verificationId, which is a certificate verification number."
 					},
 					"employer": {
 						"type": "string",
@@ -142,7 +142,7 @@
 				"properties": {
 					"id": {
 						"type": "string",
-						"description": "Stable join key for a questionnaire. Distinct from certificates[].id, which is a certificate verification number."
+						"description": "Stable join key for a questionnaire, and the token a settings exclusion uses to name this entry. Distinct from certificates[].verificationId, which is a certificate verification number."
 					},
 					"organization": {
 						"type": "string",
@@ -193,6 +193,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this institution."
+					},
 					"institution": {
 						"type": "string",
 						"description": "The name of the institution being attended, e.g. 'Massachusetts Institute of Technology'."
@@ -365,6 +369,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this award."
+					},
 					"title": {
 						"type": "string",
 						"description": "The title of the award, e.g. 'Nobel Peace Prize'."
@@ -395,6 +403,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this certificate. Distinct from verificationId, which is the certificate's verification number."
+					},
 					"name": {
 						"type": "string",
 						"description": "The title of the certificate, e.g. 'Certified Kubernetes Administrator'."
@@ -412,7 +424,7 @@
 						"description": "The relevant URL of the awarding organization's homepage, e.g. 'http://example.com'.",
 						"format": "uri"
 					},
-					"id": {
+					"verificationId": {
 						"type": "string",
 						"description": "The ID number of the certificate for verification purposes, if applicable."
 					},
@@ -431,6 +443,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this publication."
+					},
 					"name": {
 						"type": "string",
 						"description": "The name of the publication, e.g. 'The World Wide Web'."
@@ -467,6 +483,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this skill."
+					},
 					"name": {
 						"type": "string",
 						"description": "The name of the skill, e.g. 'Web Development'."
@@ -490,6 +510,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this language."
+					},
 					"language": {
 						"type": "string",
 						"description": "e.g. English, Spanish"
@@ -516,6 +540,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this interest."
+					},
 					"name": {
 						"type": "string",
 						"description": "The name of the interest, e.g. 'Philosophy'."
@@ -535,6 +563,10 @@
 				"type": "object",
 				"additionalProperties": false,
 				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Stable token a settings exclusion uses to name this reference."
+					},
 					"name": {
 						"type": "string",
 						"description": "The person who wrote the reference, e.g. 'Timothy Cook'."
@@ -556,7 +588,7 @@
 				"properties": {
 					"id": {
 						"type": "string",
-						"description": "Stable join key for a questionnaire, and the value stored in work[].crossReferencedProjects. Distinct from certificates[].id, which is a certificate verification number."
+						"description": "Stable join key for a questionnaire, the value stored in work[].crossReferencedProjects, and the token a settings exclusion uses to name this entry. Distinct from certificates[].verificationId, which is a certificate verification number."
 					},
 					"name": {
 						"type": "string",
@@ -614,9 +646,97 @@
 		},
 		"meta": {
 			"$ref": "types.json#/definitions/meta"
+		},
+		"settings": {
+			"$ref": "#/definitions/settings"
 		}
 	},
 	"required": [
 		"meta"
-	]
+	],
+	"definitions": {
+		"section": {
+			"type": "string",
+			"description": "One orderable or excludable resume section. Basics is the fixed page header: it never appears in a section ordering, but it can be excluded like any other section.",
+			"enum": [
+				"basics",
+				"summary",
+				"skills",
+				"education",
+				"work",
+				"projects",
+				"certificates",
+				"publications",
+				"awards",
+				"volunteer",
+				"languages",
+				"interests",
+				"references"
+			]
+		},
+		"settings": {
+			"type": "object",
+			"description": "Presentation preferences that travel with the document: the print order of the resume's sections and the sections or individual entries kept out of exports, tailoring, and prints.",
+			"additionalProperties": false,
+			"properties": {
+				"sectionOrder": {
+					"type": "array",
+					"description": "The resume sections in print order. Every section missing from the list prints after the listed ones in the default technical order; basics always prints first as the page header. Absent when the document keeps the default order.",
+					"default": [
+						"summary",
+						"skills",
+						"education",
+						"work",
+						"projects",
+						"certificates",
+						"publications",
+						"awards",
+						"volunteer",
+						"languages",
+						"interests",
+						"references"
+					],
+					"items": {
+						"$ref": "#/definitions/section"
+					},
+					"uniqueItems": true
+				},
+				"exclusions": {
+					"type": "array",
+					"description": "Content kept out of exports, tailoring, and prints. A bare section name excludes the whole section; a subsection token excludes one entry within it, spelled as the entry's stable id. Documents saved before ids were stamped may still spell the entry's list index, e.g. '0'; the save route rewrites those to ids.",
+					"default": [],
+					"items": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"section": {
+								"$ref": "#/definitions/section"
+							},
+							"subsection": {
+								"type": "string",
+								"description": "The entry within the section to exclude, spelled as the entry's stable id. Legacy documents may spell the entry's list index, e.g. '0'; the save route rewrites those to ids. Empty or absent excludes the whole section."
+							}
+						},
+						"required": [
+							"section"
+						]
+					}
+				},
+				"exportFormat": {
+					"type": "string",
+					"description": "The shape and encoding the fact bank export uses. Fragmented writes one document per resume section, combined writes the whole resume as one document, the v1 shapes rewrite the resume into the pre-migration JSON Resume form as one document in the matching encoding, and resumetailorai rewrites the resume into the Resume-Tailor-AI fact bank shape as one JSON document. Absent keeps the fragmented JSON default.",
+					"default": "fragmented-json",
+					"enum": [
+						"fragmented-json",
+						"fragmented-yaml",
+						"combined-json",
+						"combined-yaml",
+						"v1-json",
+						"v1-yaml",
+						"resumetailorai-json"
+					]
+				}
+			}
+		}
+	}
 }
