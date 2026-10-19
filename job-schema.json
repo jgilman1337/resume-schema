@@ -3,7 +3,7 @@
 	"$id": "https://raw.githubusercontent.com/jgilman1337/resume-schema/refs/heads/master/job-schema.json",
 	"title": "Job Description Schema",
 	"description": "This schema is for defining a job description",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
