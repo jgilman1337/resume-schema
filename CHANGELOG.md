@@ -1,3 +1,12 @@
+<a id="2.2.1"></a>
+## [WIP], Version 2.2.1
+
+### Changes
+* `meta` moved to the end of the document's property order, after `settings`, so the stamping block reads last in generated output.
+* Optional private-note `comment` string fields were added to every excludable list entry — `work`, `volunteer`, `education`, `awards`, `certificates`, `publications`, `skills`, `languages`, `interests`, `references`, and `projects` — for owner-facing context the app surfaces as a tooltip. Templates and exports never print them. `education` keeps `notes`, which may print; its `comment` is the private counterpart.
+
+---
+
 <a id="2.2.0"></a>
 ## [WIP], Version 2.2.0
 
