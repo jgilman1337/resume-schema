@@ -1,3 +1,34 @@
+<a id="2.2.0"></a>
+## [WIP], Version 2.2.0
+
+### Changes
+* `work`, `volunteer`, `education`, and `projects` entries gained a `dates` array of `{startDate, endDate}` ranges, sorted from oldest to newest, so interrupted stints (two tours at one employer, a leave of absence, resumed project work) are representable. Blank `endDate` on the last range still marks ongoing.
+* The flat `startDate` and `endDate` keys remain valid as the legacy single-range form for backwards compatibility. An entry carries either the `dates` array or the flat pair, never both.
+
+---
+
+<a id="2.1.0"></a>
+## [2026-10-19, Version 2.1.0]
+
+### Changes
+* Stable `id` fields were added to every excludable list section — `work`, `volunteer`, `education`, `awards`, `certificates`, `publications`, `skills`, `languages`, `interests`, and `references` — spelling the questionnaire join key and the settings exclusion token.
+* `work[].crossReferencedProjects` was added, listing `projects[].id` values for projects that belong to one job, such as consulting engagements under a single employer.
+* `education[].level` was added as a closed enum (`k-12`, `trade`, `undergraduate`, `graduate`, `professional`, `other`) so filtering code can drop entries well below the highest level attained.
+
+---
+
+<a id="2.0.0"></a>
+## [2026-02-12, Version 2.0.0]
+
+### Changes
+* The typedefs moved out of the resume and job schemas into an external `types.json`, referenced by `$id`, so both schemas share one source for keywords, location, mastery level, experience level, job type, and meta.
+* `meta.version` became a required, semver-rigid property, and `meta.lastModified` gained an RFC3339 format check.
+* The education section was overhauled: `programs` (name and type required), `honorSocieties` objects, `courses`, `awards`, `extracurriculars`, `notes`, and a structured GPA.
+* The job schema tightened: `type` closed onto an enum, experience and remote labels became enums, and the top-level keywords array centralized onto the shared keywords definition.
+* A keywords dictionary schema was added to alias keyword spellings onto one canonical token.
+
+---
+
 <a id="1.0.0"></a>
 ## [WIP], Version 1.0.0
 

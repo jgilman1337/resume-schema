@@ -75,6 +75,109 @@
       }
     ]
   },
+  "datesValid": {
+    "work": [
+      {
+        "dates": [
+          {
+            "startDate": "2013-12-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid2": {
+    "work": [
+      {
+        "dates": [
+          {
+            "startDate": "2013-12"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid3": {
+    "work": [
+      {
+        "dates": [
+          {
+            "startDate": "2013"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid4": {
+    "work": [
+      {
+        "dates": [
+          {
+            "startDate": "2013-12-01",
+            "endDate": "2014-12-01"
+          },
+          {
+            "startDate": "2015-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesInvalid": {
+    "work": [
+      {
+        "dates": [
+          {
+            "startDate": null
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid": {
+    "work": [
+      {
+        "dates": [
+          {
+            "endDate": "2014-12-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid2": {
+    "work": [
+      {
+        "dates": [
+          {
+            "endDate": "2014-12"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid3": {
+    "work": [
+      {
+        "dates": [
+          {
+            "endDate": "2014"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateInvalid": {
+    "work": [
+      {
+        "dates": [
+          {
+            "endDate": null
+          }
+        ]
+      }
+    ]
+  },
   "startDateValid": {
     "work": [
       {
@@ -134,7 +237,7 @@
   "summaryValid": {
     "work": [
       {
-        "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression."
+        "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores\u2122 that are not merely competitive, but approach the theoretical limit of lossless compression."
       }
     ]
   },

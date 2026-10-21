@@ -47,6 +47,109 @@
       }
     ]
   },
+  "datesValid": {
+    "education": [
+      {
+        "dates": [
+          {
+            "startDate": "2011-06-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid2": {
+    "education": [
+      {
+        "dates": [
+          {
+            "startDate": "2011-06"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid3": {
+    "education": [
+      {
+        "dates": [
+          {
+            "startDate": "2011"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid4": {
+    "education": [
+      {
+        "dates": [
+          {
+            "startDate": "2011-06-01",
+            "endDate": "2014-01-01"
+          },
+          {
+            "startDate": "2015-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesInvalid": {
+    "education": [
+      {
+        "dates": [
+          {
+            "startDate": null
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid": {
+    "education": [
+      {
+        "dates": [
+          {
+            "endDate": "2014-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid2": {
+    "education": [
+      {
+        "dates": [
+          {
+            "endDate": "2014-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid3": {
+    "education": [
+      {
+        "dates": [
+          {
+            "endDate": "2014"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateInvalid": {
+    "education": [
+      {
+        "dates": [
+          {
+            "endDate": null
+          }
+        ]
+      }
+    ]
+  },
   "startDateValid": {
     "education": [
       {

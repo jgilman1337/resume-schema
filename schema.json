@@ -2,7 +2,7 @@
 	"$schema": "https://json-schema.org/draft-07/schema",
 	"$id": "https://raw.githubusercontent.com/jgilman1337/resume-schema/refs/heads/master/schema.json",
 	"title": "Resume Schema",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
@@ -95,12 +95,20 @@
 						"description": "The relevant URL of the company's homepage, e.g. 'http://facebook.example.com'.",
 						"format": "uri"
 					},
+					"dates": {
+						"description": "The stretches of time this position was held, sorted from oldest to newest. Multiple ranges express interrupted stints, e.g. two tours at one employer. If current and ongoing, the last range's endDate is a blank string. An entry carries either this array or the legacy startDate/endDate pair, never both.",
+						"type": "array",
+						"additionalItems": false,
+						"items": {
+							"$ref": "types.json#/definitions/dateRange"
+						}
+					},
 					"startDate": {
-						"description": "The date on which this position was started.",
+						"description": "The date on which this position was started. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"endDate": {
-						"description": "The date on which this position was stopped. If current and ongoing, specify a blank string as the value for this key.",
+						"description": "The date on which this position was stopped. If current and ongoing, specify a blank string as the value for this key. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"summary": {
@@ -157,12 +165,20 @@
 						"description": "The relevant URL of the volunteer organization's homepage, e.g. 'http://redcross.example.com'.",
 						"format": "uri"
 					},
+					"dates": {
+						"description": "The stretches of time this volunteer position was held, sorted from oldest to newest. Multiple ranges express interrupted service. If current and ongoing, the last range's endDate is a blank string. An entry carries either this array or the legacy startDate/endDate pair, never both.",
+						"type": "array",
+						"additionalItems": false,
+						"items": {
+							"$ref": "types.json#/definitions/dateRange"
+						}
+					},
 					"startDate": {
-						"description": "The date on which this volunteer position was started.",
+						"description": "The date on which this volunteer position was started. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"endDate": {
-						"description": "The date on which this volunteer position was stopped. If current and ongoing, specify a blank string as the value for this key.",
+						"description": "The date on which this volunteer position was stopped. If current and ongoing, specify a blank string as the value for this key. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"summary": {
@@ -286,12 +302,20 @@
 							]
 						}
 					},
+					"dates": {
+						"description": "The stretches of time this education was attended, sorted from oldest to newest. Multiple ranges express interrupted attendance, e.g. a leave of absence. If current and ongoing, the last range's endDate is a blank string. An entry carries either this array or the legacy startDate/endDate pair, never both.",
+						"type": "array",
+						"additionalItems": false,
+						"items": {
+							"$ref": "types.json#/definitions/dateRange"
+						}
+					},
 					"startDate": {
-						"description": "The date on which the education at this institution was started.",
+						"description": "The date on which the education at this institution was started. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"endDate": {
-						"description": "The date on which the education at this institution was stopped. If current and ongoing, specify a blank string as the value for this key.",
+						"description": "The date on which the education at this institution was stopped. If current and ongoing, specify a blank string as the value for this key. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"gpa": {
@@ -611,12 +635,20 @@
 						"description": "A list of keywords pertaining to this project.",
 						"$ref": "types.json#/definitions/keywords"
 					},
+					"dates": {
+						"description": "The stretches of time work on this project happened, sorted from oldest to newest. Multiple ranges express resumed work. If current and ongoing, the last range's endDate is a blank string. An entry carries either this array or the legacy startDate/endDate pair, never both.",
+						"type": "array",
+						"additionalItems": false,
+						"items": {
+							"$ref": "types.json#/definitions/dateRange"
+						}
+					},
 					"startDate": {
-						"description": "The date on which work on this project was started.",
+						"description": "The date on which work on this project was started. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"endDate": {
-						"description": "The date on which work on this project was stopped. If current and ongoing, specify a blank string as the value for this key.",
+						"description": "The date on which work on this project was stopped. If current and ongoing, specify a blank string as the value for this key. Legacy single-range form, only present when dates is absent.",
 						"$ref": "types.json#/definitions/iso8601"
 					},
 					"url": {

@@ -31,8 +31,12 @@
 			"description": "Awesome compression company",
 			"position": "CEO/President",
 			"url": "http://piedpiper.example.com",
-			"startDate": "2013-12-01",
-			"endDate": "2014-12-01",
+			"dates": [
+				{
+					"startDate": "2013-12-01",
+					"endDate": "2014-12-01"
+				}
+			],
 			"summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
 			"highlights": [
 				"Build an algorithm for artist to detect if their music was violating copy right infringement laws",
@@ -46,8 +50,12 @@
 			"organization": "CoderDojo",
 			"position": "Teacher",
 			"url": "http://coderdojo.example.com/",
-			"startDate": "2012-01-01",
-			"endDate": "2013-01-01",
+			"dates": [
+				{
+					"startDate": "2012-01-01",
+					"endDate": "2013-01-01"
+				}
+			],
 			"summary": "Global movement of free coding clubs for young people.",
 			"highlights": [
 				"Awarded 'Teacher of the Month'"
@@ -59,8 +67,12 @@
 			"institution": "University of Oklahoma",
 			"url": "https://www.ou.edu/",
 			"area": "Information Technology",
-			"startDate": "2011-06-01",
-			"endDate": "2014-01-01",
+			"dates": [
+				{
+					"startDate": "2011-06-01",
+					"endDate": "2014-01-01"
+				}
+			],
 			"programs": [
 				{
 					"type": "Degree",
@@ -147,8 +159,12 @@
 				"Chrome Extension",
 				"Javascript"
 			],
-			"startDate": "2016-08-24",
-			"endDate": "2016-08-24",
+			"dates": [
+				{
+					"startDate": "2016-08-24",
+					"endDate": "2016-08-24"
+				}
+			],
 			"url": "http://missdirection.example.com",
 			"roles": [
 				"Team lead",

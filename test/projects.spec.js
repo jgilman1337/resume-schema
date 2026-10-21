@@ -116,6 +116,78 @@ test("projects[].keywords[item] - invalid", (t) => {
   t.end();
 });
 
+test("projects[].dates - valid [YYYY-MM-DD]", (t) => {
+  validate(fixtures.datesValid, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates - valid [YYYY-MM]", (t) => {
+  validate(fixtures.datesValid2, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates - valid [YYYY]", (t) => {
+  validate(fixtures.datesValid3, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates - valid [multiple ranges]", (t) => {
+  validate(fixtures.datesValid4, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates - invalid", (t) => {
+  validate(fixtures.datesInvalid, (err, valid) => {
+    t.notEqual(err, null, "err should contain an error");
+    t.false(valid, "valid is false");
+  });
+  t.end();
+});
+
+test("projects[].dates endDate - valid [YYYY-MM-DD]", (t) => {
+  validate(fixtures.datesEndDateValid, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates endDate - valid [YYYY-MM]", (t) => {
+  validate(fixtures.datesEndDateValid2, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates endDate - valid [YYYY]", (t) => {
+  validate(fixtures.datesEndDateValid3, (err, valid) => {
+    t.equal(err, null, "err should be null");
+    t.true(valid, "valid is true");
+  });
+  t.end();
+});
+
+test("projects[].dates endDate - invalid", (t) => {
+  validate(fixtures.datesEndDateInvalid, (err, valid) => {
+    t.notEqual(err, null, "err should contain an error");
+    t.false(valid, "valid is false");
+  });
+  t.end();
+});
+
 test("projects[].startDate - valid [YYYY-MM-DD]", (t) => {
   validate(fixtures.startDateValid, (err, valid) => {
     t.equal(err, null, "err should be null");

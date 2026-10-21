@@ -97,6 +97,109 @@
       }
     ]
   },
+  "datesValid": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "startDate": "2015-08-24"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid2": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "startDate": "2015-08"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid3": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "startDate": "2015"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid4": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "startDate": "2015-08-24",
+            "endDate": "2016-08-24"
+          },
+          {
+            "startDate": "2017-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesInvalid": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "startDate": null
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "endDate": "2016-08-24"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid2": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "endDate": "2016-08"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid3": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "endDate": "2016"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateInvalid": {
+    "projects": [
+      {
+        "dates": [
+          {
+            "endDate": null
+          }
+        ]
+      }
+    ]
+  },
   "startDateValid": {
     "projects": [
       {

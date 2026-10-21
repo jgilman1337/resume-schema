@@ -47,6 +47,109 @@
       }
     ]
   },
+  "datesValid": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "startDate": "2012-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid2": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "startDate": "2012-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid3": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "startDate": "2012"
+          }
+        ]
+      }
+    ]
+  },
+  "datesValid4": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "startDate": "2012-01-01",
+            "endDate": "2013-01-01"
+          },
+          {
+            "startDate": "2014-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesInvalid": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "startDate": null
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "endDate": "2013-01-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid2": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "endDate": "2013-01"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateValid3": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "endDate": "2013"
+          }
+        ]
+      }
+    ]
+  },
+  "datesEndDateInvalid": {
+    "volunteer": [
+      {
+        "dates": [
+          {
+            "endDate": null
+          }
+        ]
+      }
+    ]
+  },
   "startDateValid": {
     "volunteer": [
       {
