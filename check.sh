@@ -1,23 +1,31 @@
 #!/bin/sh
 
-# Validate JSON instances against job-schema.json in this directory.
-# Pass a file, or a directory of *.json files (non-recursive).
+# Validate JSON instances against a schema file in this directory.
+# check_job.sh and check_resume.sh select the schema and call this script.
+#
+# Pass the schema, then a file or a directory of *.json files (non-recursive).
 #
 # Requires check-jsonschema on PATH. Install it with pipx:
 #   pipx install check-jsonschema
 # https://github.com/python-jsonschema/check-jsonschema
 
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-SCHEMAFILE="$SCRIPT_DIR/job-schema.json"
-
 usage() {
-	echo "Usage: $0 FILE_OR_DIR..." >&2
+	echo "Usage: $0 SCHEMA FILE_OR_DIR..." >&2
 	echo "A directory contributes its *.json files, non-recursively." >&2
 	exit 2
 }
 
-if [ $# -lt 1 ]; then
+if [ $# -lt 2 ]; then
 	usage
+fi
+
+SCHEMAFILE="$1"
+shift
+
+# The schema must be a local file; the wrappers pass an absolute path.
+if [ ! -f "$SCHEMAFILE" ]; then
+	echo "not a schema file: $SCHEMAFILE" >&2
+	exit 2
 fi
 
 # Collect instance paths before invoking the validator.
